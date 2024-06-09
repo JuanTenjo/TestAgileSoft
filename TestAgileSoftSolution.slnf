@@ -1,0 +1,11 @@
+{
+  "solution": {
+    "path": "TestAgileSoft\\TestAgileSoft.sln",
+    "projects": [
+      "..\\TestAgileSoft.Application\\TestAgileSoft.Application.csproj",
+      "..\\TestAgileSoft.Domain\\TestAgileSoft.Domain.csproj",
+      "..\\TestAgileSoft.Infrastructure\\TestAgileSoft.Infrastructure.csproj",
+      "TestAgileSoft.Api.csproj"
+    ]
+  }
+}
