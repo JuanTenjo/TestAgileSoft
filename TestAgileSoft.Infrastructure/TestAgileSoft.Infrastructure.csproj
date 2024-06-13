@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\" />
-    <Folder Include="Middleware\" />
+    <Compile Remove="Extensions\**" />
+    <Compile Remove="Middleware\**" />
+    <EmbeddedResource Remove="Extensions\**" />
+    <EmbeddedResource Remove="Middleware\**" />
+    <None Remove="Extensions\**" />
+    <None Remove="Middleware\**" />
   </ItemGroup>
 
   <ItemGroup>

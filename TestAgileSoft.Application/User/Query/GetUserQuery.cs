@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using TestAgileSoft.Application.User.Dtos;
+using TestAgileSoft.Domain.Dtos;
 
 namespace TestAgileSoft.Application.User.Query
 {

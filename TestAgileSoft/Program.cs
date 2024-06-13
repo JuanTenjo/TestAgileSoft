@@ -1,3 +1,4 @@
+using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -5,9 +6,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Reflection;
 using System.Text;
 using TestAgileSoft.Domain.Entities;
 using TestAgileSoft.Domain.Ports;
+using TestAgileSoft.Domain.Services;
 using TestAgileSoft.Infrastructure.Adapters;
 using TestAgileSoft.Infrastructure.Context;
 
@@ -24,6 +27,9 @@ builder.Services.AddControllers(opt =>
 });
 
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddMediatR(Assembly.Load("TestAgileSoft.Application"), typeof(Program).Assembly);
+builder.Services.AddAutoMapper(Assembly.Load("TestAgileSoft.Application"));
 
 builder.Services.AddDbContext<PersistenceContext>(opt =>
 {
@@ -44,9 +50,12 @@ var identityBuilder = new IdentityBuilder(builderSecurity.UserType, builder.Serv
 identityBuilder.AddEntityFrameworkStores<PersistenceContext>();
 identityBuilder.AddSignInManager<SignInManager<User>>();
 builder.Services.AddSingleton<ISystemClock, SystemClock>();
-builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
-builder.Services.AddScoped<IUserSession, UserSession>();
 
+builder.Services.AddTransient<IJwtGenerator, JwtGenerator>();
+builder.Services.AddTransient<IUserSession, UserSession>();
+builder.Services.AddTransient<ITaskService, TaskRepository>();
+builder.Services.AddTransient<UserService>();
+builder.Services.AddTransient<TaskService>();
 
 //AUTORIAZACION
 //Validar Token en en headers del request
@@ -67,6 +76,8 @@ var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TestAgileSoft v1"));
+
+app.UseAuthorization();
 
 app.MapControllers();
 

@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAgileSoft.Api", "TestAgileSoft.Api.csproj", "{47536123-56D5-45E9-97D7-0126224C93F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAgileSoft.Api", "TestAgileSoft.Api.csproj", "{47536123-56D5-45E9-97D7-0126224C93F2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{446FB871-867A-48C2-ADC0-E48ED05AECCC} = {446FB871-867A-48C2-ADC0-E48ED05AECCC}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAgileSoft.Domain", "..\TestAgileSoft.Domain\TestAgileSoft.Domain.csproj", "{446FB871-867A-48C2-ADC0-E48ED05AECCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAgileSoft.Domain", "..\TestAgileSoft.Domain\TestAgileSoft.Domain.csproj", "{446FB871-867A-48C2-ADC0-E48ED05AECCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAgileSoft.Infrastructure", "..\TestAgileSoft.Infrastructure\TestAgileSoft.Infrastructure.csproj", "{5FA26197-45E3-4820-B86C-DC9D841588C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAgileSoft.Infrastructure", "..\TestAgileSoft.Infrastructure\TestAgileSoft.Infrastructure.csproj", "{5FA26197-45E3-4820-B86C-DC9D841588C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAgileSoft.Application", "..\TestAgileSoft.Application\TestAgileSoft.Application.csproj", "{EF3518C4-5171-4971-ADE3-FA2671793776}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAgileSoft.Application", "..\TestAgileSoft.Application\TestAgileSoft.Application.csproj", "{EF3518C4-5171-4971-ADE3-FA2671793776}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAgileSoft.Domain.Tests", "..\TestAgileSoft.Domain.Tests\TestAgileSoft.Domain.Tests.csproj", "{6521D673-7195-451D-9A27-2C75B82EC096}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{EF3518C4-5171-4971-ADE3-FA2671793776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF3518C4-5171-4971-ADE3-FA2671793776}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF3518C4-5171-4971-ADE3-FA2671793776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6521D673-7195-451D-9A27-2C75B82EC096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6521D673-7195-451D-9A27-2C75B82EC096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6521D673-7195-451D-9A27-2C75B82EC096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6521D673-7195-451D-9A27-2C75B82EC096}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

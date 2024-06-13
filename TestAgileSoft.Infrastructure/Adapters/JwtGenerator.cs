@@ -23,7 +23,7 @@ namespace TestAgileSoft.Infrastructure.Adapters
                 new (JwtRegisteredClaimNames.NameId, user.UserName!)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("KeyJwt").Value!));
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("KeyJwt").Value!));
             var credential = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
             var tokenDescription = new SecurityTokenDescriptor

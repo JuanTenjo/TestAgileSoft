@@ -21,7 +21,12 @@ namespace TestAgileSoft.Infrastructure.Context
                 .WithMany(a => a.Tasks)
                 .HasForeignKey(l => l.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
-               
+
+        }
+
+        public async Task CommitAsync()
+        {
+            await SaveChangesAsync().ConfigureAwait(false);
         }
 
         public DbSet<Tasks> Tasks { get; set; }

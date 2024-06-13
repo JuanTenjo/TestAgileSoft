@@ -1,4 +1,4 @@
-﻿namespace TestAgileSoft.Application.User.Dtos
+﻿namespace TestAgileSoft.Domain.Dtos
 {
     public class UserDto
     {
